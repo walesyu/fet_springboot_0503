@@ -1,6 +1,7 @@
 package com.uuu.demo1;
 
 
+import com.uuu.demo1.beans.NormalUser;
 import com.uuu.demo1.services.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,10 +17,13 @@ public class RootController {
         model.addAttribute("message","Hi, FET with Spring Boot");
         return "home"; // template filename
     }
+
     @Autowired
     private GreetingService service;
+
     @RequestMapping("/greeting")
     public @ResponseBody String greeting() {
+        NormalUser normalUser = new NormalUser();
         return service.greet();
     }
 }
