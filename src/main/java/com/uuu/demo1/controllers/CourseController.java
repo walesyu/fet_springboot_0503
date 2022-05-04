@@ -1,8 +1,10 @@
 package com.uuu.demo1.controllers;
 
 import com.uuu.demo1.beans.CourseForm;
+import javax.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -21,8 +23,12 @@ public class CourseController {
   }
 
   @PostMapping("/course")
-  public String setForm(CourseForm form) {
+  public String setForm(@Valid CourseForm form, BindingResult bindingResult) {
     log.info("course={}", form);
+    if (bindingResult.hasErrors()) {
+      log.info("{}", bindingResult);
+      return "courseForm";
+    }
     return "home";
   }
 }
