@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
+
 <body>
-Hello World!
-<h1>log with template</h1>
-<img alt="" src="" th:src="@{/images/Image1.png}"/>
-<h1>log without template</h1>
-<img alt="" src="/images/Image1.png"/>
+<h1 th:text="${message}"></h1>
+<p th:text="${message}"></p>
+<ul>
+    <li th:text="${message}"></li>
+    <li th:text="${message}"></li>
+</ul>
+<h1>FET Logo/w template</h1>
+<img th:src="@{/images/logo.png}"/>
+<h1>FET Logo/wo template</h1>
+<img src="/images/logo.png"/>
 </body>
+
 </html>
