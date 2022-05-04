@@ -7,10 +7,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Slf4j
 @Controller
-public class CourseController {
+public class CourseController implements WebMvcConfigurer {
 
 //  private static final Logger LOG = LoggerFactory.getLogger(CourseController.class);
 
@@ -29,6 +31,11 @@ public class CourseController {
       log.info("{}", bindingResult);
       return "courseForm";
     }
-    return "home";
+    return "redirect:/result";
+  }
+
+  @Override
+  public void addViewControllers(ViewControllerRegistry registry) {
+    registry.addViewController("/result").setViewName("result");
   }
 }

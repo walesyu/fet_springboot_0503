@@ -32,16 +32,22 @@
     <div class="form-group">
       <label for="courseId">Course Id:</label>
       <input class="form-control" id="courseId" name="courseId" th:field="*{courseId}" type="text">
+      <div class="alert alert-danger" th:errors="*{courseId}"
+           th:if="${#fields.hasErrors('courseId')}"></div>
     </div>
     <div class="form-group">
       <label for="courseName">Course Name:</label>
       <input class="form-control" id="courseName" name="courseName" th:field="*{courseName}"
              type="text">
+      <div class="alert alert-danger" th:errors="*{courseName}"
+           th:if="${#fields.hasErrors('courseName')}"></div>
     </div>
     <div class="form-group">
       <label for="duration">Course Duration:</label>
       <input class="form-control" id="duration" name="duration" th:field="*{courseDuration}"
              type="number"/>
+      <div class="alert alert-danger" th:errors="*{courseDuration}"
+           th:if="${#fields.hasErrors('courseDuration')}"></div>
     </div>
     <div class="form-group">
       <button class="btn btn-default" type="submit">Submit</button>
