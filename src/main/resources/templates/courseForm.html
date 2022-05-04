@@ -28,7 +28,7 @@
 <h1>This is course form</h1>
 <div class="col-md-4">&nbsp;</div>
 <div class="col-md-4">
-  <form th:object="${courseForm}">
+  <form method="post" th:action="@{/course}" th:object="${courseForm}">
     <div class="form-group">
       <label for="courseId">Course Id:</label>
       <input class="form-control" id="courseId" name="courseId" th:field="*{courseId}" type="text">
