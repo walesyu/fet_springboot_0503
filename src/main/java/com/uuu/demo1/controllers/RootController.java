@@ -1,4 +1,4 @@
-package com.uuu.demo1;
+package com.uuu.demo1.controllers;
 
 
 import com.uuu.demo1.beans.NormalUser;

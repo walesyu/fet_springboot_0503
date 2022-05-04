@@ -1,4 +1,4 @@
-package com.uuu.demo1;
+package com.uuu.demo1.beans;
 
 import com.uuu.demo1.beans.NormalUser;
 import com.uuu.demo1.beans.NormalUser2;
