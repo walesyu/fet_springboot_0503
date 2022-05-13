@@ -31,6 +31,7 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation 'net.bull.javamelody:javamelody-spring-boot-starter:1.91.0'
     implementation 'com.lowagie:itext:2.1.7'
+    implementation 'io.micrometer:micrometer-registry-prometheus'
 }
 
 tasks.named('test') {
